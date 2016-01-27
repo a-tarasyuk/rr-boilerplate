@@ -1,0 +1,28 @@
+{
+  "rules": {
+    "semi":   2,
+    "quotes": [2, "single"],
+    "key-spacing": [
+      2, {
+        "beforeColon": false,
+        "afterColon": true
+      }
+    ],
+    "eol-last": 0,
+    "strict": [2, "never"],
+    "camelcase": [2, {properties: "never"}],
+    "no-shadow": 0,
+    "indent": [2, 2, {VariableDeclarator: {"var": 2, "let": 2, "const": 2}}]
+  },
+
+  "globals": {},
+
+  "env": {
+    "es6": true
+  },
+
+  "ecmaFeatures": {
+    "modules": true,
+    "jsx": true
+  }
+}
