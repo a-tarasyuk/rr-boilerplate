@@ -2,7 +2,7 @@
 > Lightweight React&Redux boilerplate
 
 ### Getting started
-1. Clone this repository using `https://github.com/a-tarasyuk/rr-boilerplate.git <YourProjectName>`
+1. Clone this repository using `git clone https://github.com/a-tarasyuk/rr-boilerplate.git <YourProjectName>`
 2. Enter to your project `cd <YourProjectName>`
 2. Delete the existing git repository by running `rm -rf .git`
 3. Initialize a new git repository with `git init`, `git add .` and `git commit -m "First commit"`
