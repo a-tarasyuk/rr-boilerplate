@@ -19,4 +19,4 @@
 ### NPM tasks
 - `npm run dev-server` - starts local web server
 - `npm start`- starts production build and run local web server
-- `npm run build` - starts production build*(puts result to **build** folder)*
+- `npm run build` - starts production build*(puts result to `build` folder)*
