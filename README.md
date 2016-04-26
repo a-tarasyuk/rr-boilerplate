@@ -10,7 +10,7 @@
 5. Run `npm run dev-server` to start the local web server
 6. Go to `http://localhost:9999`
 
-### Libraries
+### Libraries/Tools
 - [React](https://facebook.github.io/react)
 - [Redux](https://github.com/rackt/redux)
 - [Webpack](https://webpack.github.io)
