@@ -24,6 +24,6 @@ export default merge({
         comments: false
       }
     }),
-    new CompressionPlugin({ asset: '{file}.gz', algorithm: 'gzip' })
+    new CompressionPlugin({ asset: '[path].gz', algorithm: 'gzip' })
   ]
 }, CONFIG);
