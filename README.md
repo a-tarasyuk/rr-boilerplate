@@ -13,6 +13,8 @@
 ### Libraries/Tools
 - [React](https://facebook.github.io/react)
 - [Redux](https://github.com/rackt/redux)
+- [React Router](https://github.com/reactjs/react-router)
+- [React Router Redux](https://github.com/reactjs/react-router-redux)
 - [Webpack](https://webpack.github.io)
 - [Babel](https://babeljs.io)
 

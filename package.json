@@ -4,6 +4,10 @@
   "author": "Alexander Tarasyuk",
   "license": "MIT",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/a-tarasyuk/rr-boilerplate"
+  },
   "scripts": {
     "clean": "node_modules/.bin/rimraf build/",
     "build": "npm run clean && node_modules/.bin/webpack --config webpack/production.config.babel.js",
@@ -12,34 +16,36 @@
   },
   "devDependencies": {
     "babel": "^6.5.2",
-    "babel-core": "^6.7.7",
+    "babel-core": "^6.9.0",
     "babel-eslint": "^6.0.4",
     "babel-loader": "^6.2.4",
-    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.5.0",
     "compression-webpack-plugin": "^0.3.1",
     "css-loader": "^0.23.1",
-    "eslint": "^2.8.0",
+    "eslint": "^2.10.2",
     "eslint-loader": "^1.3.0",
-    "eslint-plugin-react": "^5.0.1",
+    "eslint-plugin-react": "^5.1.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
-    "html-webpack-plugin": "^2.16.0",
+    "html-webpack-plugin": "^2.17.0",
     "http-server": "^0.9.0",
-    "lodash": "^4.11.1",
-    "node-sass": "^3.6.0",
+    "lodash": "^4.13.1",
+    "node-sass": "^3.7.0",
     "rimraf": "^2.5.2",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
-    "webpack": "^1.13.0",
+    "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
-    "classnames": "^2.2.4",
-    "react": "^15.0.1",
-    "react-dom": "^15.0.1",
+    "classnames": "^2.2.5",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
     "react-redux": "^4.4.5",
-    "redux-thunk": "^2.0.1",
-    "redux": "^3.5.2"
+    "react-router": "^2.4.1",
+    "react-router-redux": "^4.0.4",
+    "redux": "^3.5.2",
+    "redux-thunk": "^2.1.0"
   }
 }

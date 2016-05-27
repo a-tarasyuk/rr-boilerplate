@@ -7,5 +7,5 @@ const FeaturesContainer= (props) => (
 );
 
 export default connect(
-  ({ features }) => ({ features })
+  ({ features, routing }) => ({ features, routing })
 )(FeaturesContainer);
