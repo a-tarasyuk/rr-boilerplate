@@ -1,0 +1,23 @@
+@import '~styles/theme/variables';
+
+.header {
+  margin: 10px 0 0;
+  padding: 10px 0;
+  border-bottom: 1px solid $gallery;
+
+  &__link {
+    font-size: 1.8em;
+    color: $astral;
+    display: inline-block;
+    margin: 0 10px 0 0;
+    text-decoration: none;
+
+    &:hover {
+      color: $silver;
+    }
+
+    &_active {
+      text-decoration: underline;
+    }
+  }
+}
