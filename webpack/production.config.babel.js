@@ -24,6 +24,11 @@ export default merge({
         comments: false
       }
     }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
     new CompressionPlugin({ asset: '[path].gz', algorithm: 'gzip' })
   ]
 }, CONFIG);
