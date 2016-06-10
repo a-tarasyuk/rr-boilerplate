@@ -17,6 +17,7 @@ export default merge({
     stats: {
       colors: true
     },
-    port: 9999
+    port: 9999,
+    historyApiFallback: true
   }
 }, CONFIG);
