@@ -1,5 +1,5 @@
 import { CONFIG, APP_PATH } from './config';
-import merge from './helpers/merge';
+import merge from 'webpack-merge';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 export default merge({

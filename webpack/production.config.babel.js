@@ -1,6 +1,6 @@
 import { CONFIG, ROOT_PATH } from './config';
 import webpack from 'webpack';
-import merge from './helpers/merge';
+import merge from 'webpack-merge';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 
