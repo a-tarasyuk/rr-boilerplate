@@ -1,17 +1,17 @@
 .header {
   margin: 10px 0 0;
   padding: 10px 0;
-  border-bottom: 1px solid #EEEEEE;
+  border-bottom: 1px solid #eee;
 
   &__link {
     font-size: 1.8em;
-    color: #3572B0;
+    color: #3572b0;
     display: inline-block;
     margin: 0 10px 0 0;
     text-decoration: none;
 
     &:hover {
-      color: #CCCCCC;
+      color: #ccc;
     }
 
     &_active {

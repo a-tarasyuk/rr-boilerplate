@@ -2,6 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 import cssnext from 'postcss-cssnext';
 import postcssReporter from 'postcss-reporter';
+import stylelint from 'stylelint';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import { dependencies } from '../package.json';
@@ -50,6 +51,7 @@ export const CONFIG = {
   },
 
   postcss: [
+    stylelint(),
     cssnext({
       browsers: ['last 2 versions', 'IE > 10']
     }),
