@@ -5,7 +5,7 @@
 1. Clone this repository using `git clone --depth=1 https://github.com/a-tarasyuk/rr-boilerplate.git <YourProjectName>`
 2. Enter to your project `cd <YourProjectName>`
 3. Run `npm i` to install the dependencies
-4. Run `npm run dev-server` to start the local web server
+4. Run `npm start` to start the local web server
 5. Go to `http://localhost:9999`
 
 ### Libraries/Tools
