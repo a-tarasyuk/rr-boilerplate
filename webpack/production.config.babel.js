@@ -8,11 +8,26 @@ export default merge({
   output: {
     path: `${ ROOT_PATH }/build`,
     publicPath: '/',
-    filename: 'bundle-[hash].js'
+    filename: 'bundle-[chunkhash].js',
+    chunkFilename: 'chunk-[chunkhash].js'
   },
 
   plugins: [
-    new ExtractTextPlugin('bundle-[hash].css'),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'vendor-[chunkhash].js',
+      minChunks: Infinity
+    }),
+
+    new ExtractTextPlugin({ filename: 'bundle-[hash].css', allChunks: true }),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(true),
+
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+      debug: false
+    }),
+
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false,
@@ -22,13 +37,16 @@ export default merge({
       output: {
         ascii_only: true,
         comments: false
-      }
+      },
+      sourceMap: false
     }),
+
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
       }
     }),
+
     new CompressionPlugin({ asset: '[path].gz', algorithm: 'gzip' })
   ]
 }, CONFIG);

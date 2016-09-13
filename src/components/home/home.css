@@ -1,5 +1,3 @@
-@import '~styles/theme/variables';
-
 .home {
   &__title {
     margin: 0;
@@ -10,7 +8,7 @@
   &__description {
     margin: 0;
     padding: 0;
-    color: $boulder;
+    color: #777777;
     font-size: 1em;
   }
 }

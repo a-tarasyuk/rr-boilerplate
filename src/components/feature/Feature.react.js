@@ -1,4 +1,4 @@
-import './feature.scss';
+import './feature.css';
 import React from 'react';
 
 export default ({ name, url }) => {

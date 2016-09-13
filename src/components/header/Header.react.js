@@ -1,4 +1,4 @@
-import './header.scss';
+import './header.css';
 import { Link, IndexLink } from 'react-router';
 import React from 'react';
 

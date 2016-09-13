@@ -1,19 +1,17 @@
-@import '~styles/theme/variables';
-
 .header {
   margin: 10px 0 0;
   padding: 10px 0;
-  border-bottom: 1px solid $gallery;
+  border-bottom: 1px solid #EEEEEE;
 
   &__link {
     font-size: 1.8em;
-    color: $astral;
+    color: #3572B0;
     display: inline-block;
     margin: 0 10px 0 0;
     text-decoration: none;
 
     &:hover {
-      color: $silver;
+      color: #CCCCCC;
     }
 
     &_active {
