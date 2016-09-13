@@ -1,4 +1,4 @@
-import './home.scss';
+import './home.css';
 import React from 'react';
 
 export default () => (

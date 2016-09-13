@@ -1,12 +1,20 @@
 import path from 'path';
 import webpack from 'webpack';
+import cssnext from 'postcss-cssnext';
+import postcssReporter from 'postcss-reporter';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import { dependencies } from '../package.json';
 
 export const ROOT_PATH = path.join(__dirname, '..');
-export const APP_PATH = `${ ROOT_PATH }/src`;
+export const APP_PATH  = `${ ROOT_PATH }/src`;
 export const CONFIG = {
-  entry: `${ APP_PATH }/main`,
+
+  entry: {
+    app: `${ APP_PATH }/main`,
+    vendor: Object.keys(dependencies)
+  },
+
   context: APP_PATH,
 
   module: {
@@ -17,15 +25,19 @@ export const CONFIG = {
     loaders: [
       { test: /\.js$/, loader: 'babel', exclude: /node_modules/ },
       {
-        test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style', 'css?minimize!sass'),
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract({ fallbackLoader: 'style', loader: ['css?minimize', 'postcss'] }),
         exclude: /node_modules/
       }
     ]
   },
 
   resolve: {
-    extensions: ['', '.js', '.scss'],
+    extensions: ['', '.js', '.css'],
+
+    modules: [
+      APP_PATH, 'node_modules'
+    ],
 
     alias: {
       constants: `${ APP_PATH }/constants`,
@@ -37,8 +49,16 @@ export const CONFIG = {
     }
   },
 
+  postcss: [
+    cssnext({
+      browsers: ['last 2 versions', 'IE > 10']
+    }),
+    postcssReporter({
+      clearMessages: true
+    })
+  ],
+
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.NoErrorsPlugin(),
     new HtmlWebpackPlugin({
       template: `${ APP_PATH }/template.html`

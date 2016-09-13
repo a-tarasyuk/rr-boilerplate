@@ -1,4 +1,4 @@
-import 'styles/main';
+import 'styles/main.css';
 import React from 'react';
 import Header from 'components/header/Header.react';
 

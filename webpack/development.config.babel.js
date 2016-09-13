@@ -1,5 +1,6 @@
 import { CONFIG, APP_PATH } from './config';
 import merge from 'webpack-merge';
+import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 export default merge({
@@ -7,7 +8,12 @@ export default merge({
   devtool: 'source-map',
 
   plugins: [
-    new ExtractTextPlugin('bundle.css')
+    new ExtractTextPlugin('bundle.css'),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'vendor.js',
+      minChunks: Infinity
+    })
   ],
 
   devServer: {

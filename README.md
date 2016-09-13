@@ -13,10 +13,10 @@
 - [Redux](https://github.com/rackt/redux)
 - [React Router](https://github.com/reactjs/react-router)
 - [React Router Redux](https://github.com/reactjs/react-router-redux)
-- [Webpack](https://webpack.github.io)
+- [Webpack-2](https://webpack.github.io)
 - [Babel](https://babeljs.io)
 
 ### NPM tasks
-- `npm run dev-server` - starts local web server
-- `npm start`- starts production build and run local web server
+- `npm start` - starts local web server
+- `npm run start:production`- starts production build and run local web server
 - `npm run build` - starts production build*(puts result to `build` folder)*
