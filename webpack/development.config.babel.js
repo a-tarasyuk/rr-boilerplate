@@ -17,7 +17,8 @@ export default merge({
   ],
 
   devServer: {
-    info: true,
+    noInfo: false,
+    open: true,
     hot: false,
     inline: true,
     stats: {
