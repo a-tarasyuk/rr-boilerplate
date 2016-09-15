@@ -7,6 +7,24 @@ export default merge({
   debug: true,
   devtool: 'source-map',
 
+  module: {
+    loaders: [{ 
+      test: /\.css$/, 
+      loaders: [{
+        loader: 'style'
+      }, {
+        loader: 'css',
+        query: {
+          localIdentName: '[local]__[path][name]__[hash:base64:5]',
+          modules: true,
+          importLoaders: 1,
+          sourceMap: true    
+        }
+      }], 
+      exclude: /node_modules/ 
+    }]
+  },
+
   plugins: [
     new ExtractTextPlugin('bundle.css'),
     new webpack.optimize.CommonsChunkPlugin({
