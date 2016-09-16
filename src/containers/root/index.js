@@ -1,11 +1,11 @@
-import React from 'react';
 import styles from './styles.css';
+import React, { PropTypes } from 'react';
 import Header from 'components/header';
 
 const Root = ({ children }) => (
   <div className={ styles.root }>
     <Header />
-    
+
     <div className={ styles.content }>
       { children }
     </div>
@@ -13,7 +13,7 @@ const Root = ({ children }) => (
 );
 
 Root.propTypes = {
-  children: React.PropTypes.node,
+  children: PropTypes.node
 };
 
 export default Root;

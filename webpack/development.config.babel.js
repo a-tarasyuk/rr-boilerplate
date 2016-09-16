@@ -1,15 +1,15 @@
 import { CONFIG, APP_PATH } from './config';
 import merge from 'webpack-merge';
 import webpack from 'webpack';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default merge({
   debug: true,
   devtool: 'source-map',
 
   module: {
-    loaders: [{ 
-      test: /\.css$/, 
+    loaders: [{
+      test: /\.css$/,
       loaders: [{
         loader: 'style'
       }, {
@@ -18,15 +18,20 @@ export default merge({
           localIdentName: '[local]__[path][name]__[hash:base64:5]',
           modules: true,
           importLoaders: 1,
-          sourceMap: true    
+          sourceMap: true
         }
-      }], 
-      exclude: /node_modules/ 
+      }, {
+        loader: 'postcss'
+      }],
+      exclude: /node_modules/
     }]
   },
 
   plugins: [
-    new ExtractTextPlugin('bundle.css'),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: `${ APP_PATH }/template.html`
+    }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       filename: 'vendor.js',
@@ -40,7 +45,20 @@ export default merge({
     hot: false,
     inline: true,
     stats: {
-      colors: true
+      colors: true,
+      hash: true,
+      version: true,
+      timings: true,
+      assets: true,
+      chunks: false,
+      modules: false,
+      reasons: false,
+      children: false,
+      source: false,
+      errors: true,
+      errorDetails: true,
+      warnings: true,
+      publicPath: false
     },
     port: 9999,
     historyApiFallback: true
