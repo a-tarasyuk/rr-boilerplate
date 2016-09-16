@@ -15,6 +15,7 @@
 - [React Router Redux](https://github.com/reactjs/react-router-redux)
 - [Webpack-2](https://webpack.github.io)
 - [Babel](https://babeljs.io)
+- [CSS-Modules](https://github.com/css-modules/css-modules)
 
 ### NPM tasks
 - `npm start` - starts local web server
