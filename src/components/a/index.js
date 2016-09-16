@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import styles from './styles';
 
-const A = ({ url, name, title = '' }) => (
-  <a href={ href } target="blank" title={ title } className={ styles.link }>
+const A = ({ href, name, title = '' }) => (
+  <a href={ href } target="blank" title={ title || name } className={ styles.link }>
     { name }
   </a>
 );
@@ -10,7 +10,7 @@ const A = ({ url, name, title = '' }) => (
 A.propTypes = {
   href: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  title: PropTypes.string,
+  title: PropTypes.string
 };
 
-export A;
+export default A;

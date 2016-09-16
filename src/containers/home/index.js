@@ -1,17 +1,11 @@
+import styles from './styles.css';
 import React from 'react';
-import { connect } from 'react-redux';
-// import Home from 'components/home/Home.react';
-
-//const HomeContainer = () => (
-//  <Home />
-//);
 
 const Home = () => {
-  return <h1></h1>;
+  return <div className={ styles.home }>
+    <h1 className={ styles.title }>rr-boilerplate</h1>
+    <p className={ styles.description }>Lightweight React&Redux boilerplate</p>
+  </div>;
 };
 
-Home.propTypes = {
-  children: React.PropTypes.node
-};
-
-export default connect()(Home);
+export default Home;

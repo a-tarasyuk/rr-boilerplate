@@ -11,11 +11,11 @@
   margin: 0 10px 0 0;
   text-decoration: none;
 
+  &_active {
+    text-decoration: underline;
+  }
+
   &:hover {
     color: #ccc;
   }
-}
-
-.link_active {
-  text-decoration: underline;
 }

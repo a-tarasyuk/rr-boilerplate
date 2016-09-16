@@ -1,10 +1,10 @@
 const initialState = [
-  { name: 'React', url: 'https://facebook.github.io/react' },
-  { name: 'Redux', url: 'https://github.com/rackt/redux' },
-  { name: 'React Router', url: 'https://github.com/reactjs/react-router' },
-  { name: 'React Router Redux', url: 'https://github.com/reactjs/react-router-redux' },
-  { name: 'Webpack', url: 'https://webpack.github.io' },
-  { name: 'Babel', url: 'https://babeljs.io' }
+  { name: 'React', href: 'https://facebook.github.io/react' },
+  { name: 'Redux', href: 'https://github.com/rackt/redux' },
+  { name: 'React Router', href: 'https://github.com/reactjs/react-router' },
+  { name: 'React Router Redux', href: 'https://github.com/reactjs/react-router-redux' },
+  { name: 'Webpack', href: 'https://webpack.github.io' },
+  { name: 'Babel', href: 'https://babeljs.io' }
 ];
 
 /**

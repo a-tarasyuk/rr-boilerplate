@@ -1,8 +1,9 @@
-import { CONFIG, ROOT_PATH } from './config';
+import { CONFIG, ROOT_PATH, APP_PATH } from './config';
 import webpack from 'webpack';
 import merge from 'webpack-merge';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default merge({
   output: {
@@ -10,6 +11,26 @@ export default merge({
     publicPath: '/',
     filename: 'bundle-[chunkhash].js',
     chunkFilename: 'chunk-[chunkhash].js'
+  },
+
+  module: {
+    loaders: [{
+      test: /\.css$/,
+      loader: ExtractTextPlugin.extract({
+        fallbackLoader: 'style',
+        loader: [{
+          loader: 'css',
+          query: {
+            modules: true,
+            importLoaders: 1,
+            sourceMap: false,
+            minimize: true
+          }
+        }, {
+          loader: 'postcss'
+        }]
+      })
+    }]
   },
 
   plugins: [
@@ -39,6 +60,23 @@ export default merge({
         comments: false
       },
       sourceMap: false
+    }),
+
+    new HtmlWebpackPlugin({
+      inject: true,
+      minify: {
+        collapseWhitespace: true,
+        keepClosingSlash: true,
+        removeRedundantAttributes: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        removeComments: true,
+        useShortDoctype: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true
+      },
+      template: `${ APP_PATH }/template.html`
     }),
 
     new webpack.DefinePlugin({
