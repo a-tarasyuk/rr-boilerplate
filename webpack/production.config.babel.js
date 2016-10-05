@@ -14,7 +14,7 @@ export default merge({
   },
 
   module: {
-    loaders: [{
+    rules: [{
       test: /\.css$/,
       loader: ExtractTextPlugin.extract({
         fallbackLoader: 'style',
@@ -22,9 +22,8 @@ export default merge({
           loader: 'css',
           query: {
             modules: true,
-            importLoaders: 1,
-            sourceMap: false,
-            minimize: true
+            minimize: true,
+            localIdentName: '[hash:base64:8]'
           }
         }, {
           loader: 'postcss'
@@ -43,11 +42,6 @@ export default merge({
     new ExtractTextPlugin({ filename: 'bundle-[hash].css', allChunks: true }),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(true),
-
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-      debug: false
-    }),
 
     new webpack.optimize.UglifyJsPlugin({
       compress: {
