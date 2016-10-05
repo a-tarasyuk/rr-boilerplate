@@ -4,21 +4,18 @@ import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default merge({
-  debug: true,
   devtool: 'source-map',
 
   module: {
-    loaders: [{
+    rules: [{
       test: /\.css$/,
-      loaders: [{
+      loader: [{
         loader: 'style'
       }, {
         loader: 'css',
         query: {
-          localIdentName: '[local]__[path][name]__[hash:base64:5]',
           modules: true,
-          importLoaders: 1,
-          sourceMap: true
+          localIdentName: '[local]__[path][name]__[hash:base64:5]'
         }
       }, {
         loader: 'postcss'

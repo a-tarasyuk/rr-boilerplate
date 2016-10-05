@@ -17,17 +17,14 @@ export const CONFIG = {
   context: APP_PATH,
 
   module: {
-    preLoaders: [
-      { test: /\.js$/, loader: 'eslint', exclude: /node_modules/ }
-    ],
-
-    loaders: [
+    rules: [
+      { test: /\.js$/, loader: 'eslint', enforce: 'pre', exclude: /node_modules/ },
       { test: /\.js$/, loader: 'babel', exclude: /node_modules/ }
     ]
   },
 
   resolve: {
-    extensions: ['', '.js', '.css'],
+    extensions: ['.js', '.css'],
 
     modules: [
       APP_PATH, 'node_modules'
@@ -43,19 +40,24 @@ export const CONFIG = {
     }
   },
 
-  postcss: (webpack) => {
-    return [
-      stylelint(),
-      cssnext({
-        browsers: ['last 2 versions', 'IE > 10']
-      }),
-      postcssReporter({
-        clearMessages: true
-      })
-    ]
-  },
-
   plugins: [
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        postcss: (webpack) => {
+          return [
+            stylelint(),
+
+            cssnext({
+              browsers: ['last 2 versions', 'IE > 10']
+            }),
+
+            postcssReporter({
+              clearMessages: true
+            })
+          ]
+        }
+      }
+    })
   ]
 };
