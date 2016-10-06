@@ -1,8 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
 import cssnext from 'postcss-cssnext';
-import postcssReporter from 'postcss-reporter';
-import stylelint from 'stylelint';
 import { dependencies } from '../package.json';
 
 export const ROOT_PATH = path.join(__dirname, '..');
@@ -47,14 +45,8 @@ export const CONFIG = {
 
         postcss: (webpack) => {
           return [
-            stylelint(),
-
             cssnext({
               browsers: ['last 2 versions', 'IE > 10']
-            }),
-
-            postcssReporter({
-              clearMessages: true
             })
           ]
         }

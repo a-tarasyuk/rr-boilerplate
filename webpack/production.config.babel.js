@@ -4,6 +4,7 @@ import merge from 'webpack-merge';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import StyleLintPlugin from 'stylelint-webpack-plugin';
 
 export default merge({
   output: {
@@ -33,6 +34,13 @@ export default merge({
   },
 
   plugins: [
+    new StyleLintPlugin({
+      configFile: '.stylelintrc',
+      context: APP_PATH,
+      files: '**/*.css',
+      failOnError: true
+    }),
+
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       filename: 'vendor-[chunkhash].js',
