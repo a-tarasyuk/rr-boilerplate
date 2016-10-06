@@ -8,13 +8,12 @@ import { dependencies } from '../package.json';
 export const ROOT_PATH = path.join(__dirname, '..');
 export const APP_PATH  = `${ ROOT_PATH }/src`;
 export const CONFIG = {
+  target: 'web',
 
   entry: {
     app: `${ APP_PATH }/main`,
     vendor: Object.keys(dependencies)
   },
-
-  context: APP_PATH,
 
   module: {
     rules: [
@@ -44,6 +43,8 @@ export const CONFIG = {
     new webpack.NoErrorsPlugin(),
     new webpack.LoaderOptionsPlugin({
       options: {
+        context: APP_PATH,
+
         postcss: (webpack) => {
           return [
             stylelint(),
