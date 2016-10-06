@@ -2,6 +2,7 @@ import { CONFIG, APP_PATH } from './config';
 import merge from 'webpack-merge';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import StyleLintPlugin from 'stylelint-webpack-plugin';
 
 export default merge({
   devtool: 'source-map',
@@ -33,7 +34,12 @@ export default merge({
       name: 'vendor',
       filename: 'vendor.js',
       minChunks: Infinity
-    })
+    }),
+    new StyleLintPlugin({
+      configFile: '.stylelintrc',
+      context: APP_PATH,
+      files: '**/*.css'
+    }),
   ],
 
   devServer: {
