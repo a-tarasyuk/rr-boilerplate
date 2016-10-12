@@ -66,6 +66,7 @@ export default merge({
 
     new HtmlWebpackPlugin({
       inject: true,
+      favicon: `${ APP_PATH }/assets/images/favicon.ico`,
       minify: {
         collapseWhitespace: true,
         keepClosingSlash: true,

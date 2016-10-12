@@ -28,7 +28,8 @@ export default merge({
   plugins: [
     new HtmlWebpackPlugin({
       inject: true,
-      template: `${ APP_PATH }/template.html`
+      template: `${ APP_PATH }/template.html`,
+      favicon: `${ APP_PATH }/assets/images/favicon.ico`
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
