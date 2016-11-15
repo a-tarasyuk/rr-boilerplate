@@ -1,6 +1,5 @@
 import { CONFIG, APP_PATH } from './config';
 import merge from 'webpack-merge';
-import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
 
@@ -31,11 +30,7 @@ export default merge({
       template: `${ APP_PATH }/template.html`,
       favicon: `${ APP_PATH }/assets/images/favicon.ico`
     }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      filename: 'vendor.js',
-      minChunks: Infinity
-    }),
+
     new StyleLintPlugin({
       configFile: '.stylelintrc',
       context: APP_PATH,

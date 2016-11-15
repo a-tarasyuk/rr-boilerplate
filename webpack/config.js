@@ -8,10 +8,7 @@ export const APP_PATH  = `${ ROOT_PATH }/src`;
 export const CONFIG = {
   target: 'web',
 
-  entry: {
-    app: `${ APP_PATH }/main`,
-    vendor: Object.keys(dependencies)
-  },
+  entry: `${ APP_PATH }/main`,
 
   module: {
     rules: [
