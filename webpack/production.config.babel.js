@@ -18,16 +18,16 @@ export default merge({
     rules: [{
       test: /\.css$/,
       loader: ExtractTextPlugin.extract({
-        fallbackLoader: 'style',
+        fallbackLoader: 'style-loader',
         loader: [{
-          loader: 'css',
+          loader: 'css-loader',
           query: {
             modules: true,
             minimize: true,
             localIdentName: '[hash:base64:8]'
           }
         }, {
-          loader: 'postcss'
+          loader: 'postcss-loader'
         }]
       })
     }]

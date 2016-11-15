@@ -15,8 +15,8 @@ export const CONFIG = {
 
   module: {
     rules: [
-      { test: /\.js$/, loader: 'eslint', enforce: 'pre', exclude: /node_modules/ },
-      { test: /\.js$/, loader: 'babel', exclude: /node_modules/ }
+      { test: /\.js$/, loader: 'eslint-loader', enforce: 'pre', exclude: /node_modules/ },
+      { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ }
     ]
   },
 
