@@ -10,16 +10,16 @@ export default merge({
   module: {
     rules: [{
       test: /\.css$/,
-      loader: [{
-        loader: 'style'
+      use: [{
+        loader: 'style-loader'
       }, {
-        loader: 'css',
+        loader: 'css-loader',
         query: {
           modules: true,
           localIdentName: '[local]__[path][name]__[hash:base64:5]'
         }
       }, {
-        loader: 'postcss'
+        loader: 'postcss-loader'
       }],
       exclude: /node_modules/
     }]
