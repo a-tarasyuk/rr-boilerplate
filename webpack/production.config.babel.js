@@ -41,12 +41,6 @@ export default merge({
       failOnError: true
     }),
 
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      filename: 'vendor-[chunkhash].js',
-      minChunks: Infinity
-    }),
-
     new ExtractTextPlugin({ filename: 'bundle-[hash].css', allChunks: true }),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(true),
