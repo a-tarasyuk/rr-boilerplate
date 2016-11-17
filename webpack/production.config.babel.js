@@ -42,7 +42,6 @@ export default merge({
     }),
 
     new ExtractTextPlugin({ filename: 'bundle-[hash].css', allChunks: true }),
-    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(true),
 
     new webpack.optimize.UglifyJsPlugin({
