@@ -1,7 +1,5 @@
 import path from 'path';
 import webpack from 'webpack';
-import cssnext from 'postcss-cssnext';
-import { dependencies } from '../package.json';
 
 export const ROOT_PATH = path.join(__dirname, '..');
 export const APP_PATH  = `${ ROOT_PATH }/src`;
@@ -35,19 +33,6 @@ export const CONFIG = {
   },
 
   plugins: [
-    new webpack.NoErrorsPlugin(),
-    new webpack.LoaderOptionsPlugin({
-      options: {
-        context: APP_PATH,
-
-        postcss: (webpack) => {
-          return [
-            cssnext({
-              browsers: ['last 2 versions', 'IE > 10']
-            })
-          ]
-        }
-      }
-    })
+    new webpack.NoErrorsPlugin()
   ]
 };

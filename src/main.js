@@ -1,3 +1,4 @@
+import './assets/styles/main.css';
 import { Provider } from 'react-redux';
 import { Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
