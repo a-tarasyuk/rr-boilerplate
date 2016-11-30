@@ -1,6 +1,6 @@
 import { routerReducer as routing } from 'react-router-redux';
 import { combineReducers } from 'redux';
-import { Features as features } from './Features.reducer';
+import { features } from './features.reducer';
 
 export default combineReducers({
   routing,

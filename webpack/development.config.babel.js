@@ -35,7 +35,7 @@ export default merge({
       configFile: '.stylelintrc',
       context: APP_PATH,
       files: '**/*.css'
-    }),
+    })
   ],
 
   devServer: {

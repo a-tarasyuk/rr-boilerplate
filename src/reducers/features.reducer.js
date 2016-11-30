@@ -16,6 +16,6 @@ const initialState = [
  *
  * @return {Array}
  */
-export function Features(state = initialState, action) {
+export function features(state = initialState, action) {
   return state;
 }
