@@ -10,8 +10,8 @@
   },
   "scripts": {
     "clean": "node_modules/.bin/rimraf build/",
-    "build": "npm run clean && NODE_ENV=production node_modules/.bin/webpack --config webpack/production.config.babel.js --progress",
-    "start": "NODE_ENV=development node_modules/.bin/webpack-dev-server --config webpack/development.config.babel.js --progress",
+    "build": "npm run clean && NODE_ENV=production node_modules/.bin/webpack --config webpack/prod.config.babel.js --progress",
+    "start": "NODE_ENV=development node_modules/.bin/webpack-dev-server --config webpack/dev.config.babel.js --progress",
     "start:production": "npm run build && node_modules/.bin/http-server build/ -p 9999 -o"
   },
   "devDependencies": {
@@ -22,17 +22,17 @@
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "compression-webpack-plugin": "^0.3.2",
-    "css-loader": "^0.26.0",
-    "eslint": "^3.10.2",
+    "css-loader": "^0.26.1",
+    "eslint": "^3.11.1",
     "eslint-loader": "^1.6.1",
-    "eslint-plugin-react": "^6.7.1",
+    "eslint-plugin-react": "^6.8.0",
     "extract-text-webpack-plugin": "^2.0.0-beta.4",
     "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.24.1",
     "http-server": "^0.9.0",
-    "postcss-cssnext": "^2.8.0",
-    "postcss-loader": "^1.1.1",
-    "postcss-smart-import": "^0.6.0",
+    "postcss-cssnext": "^2.9.0",
+    "postcss-import": "^9.0.0",
+    "postcss-loader": "^1.2.0",
     "redux-logger": "^2.7.4",
     "rimraf": "^2.5.4",
     "style-loader": "^0.13.1",
@@ -40,8 +40,8 @@
     "stylelint-config-standard": "^15.0.0",
     "stylelint-webpack-plugin": "^0.4.0",
     "webpack": "^2.1.0-beta.27",
-    "webpack-dev-server": "^2.1.0-beta.11",
-    "webpack-merge": "^0.18.0"
+    "webpack-dev-server": "^2.1.0-beta.12",
+    "webpack-merge": "^1.0.2"
   },
   "dependencies": {
     "babel-eslint": "^7.1.1",
