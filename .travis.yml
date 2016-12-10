@@ -1,0 +1,13 @@
+language: node_js
+  node_js:
+    - "6"
+
+env:
+    - NODE_ENV=development
+
+install:
+  - "npm --version"
+  - "npm i"
+
+script:
+  - npm run build
