@@ -10,13 +10,13 @@ export const CONFIG = {
 
   module: {
     rules: [
-      { test: /\.js$/, loader: 'eslint-loader', enforce: 'pre', exclude: /node_modules/ },
-      { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ }
+      { test: /\.jsx?$/, loader: 'eslint-loader', enforce: 'pre', exclude: /node_modules/ },
+      { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ }
     ]
   },
 
   resolve: {
-    extensions: ['.js', '.css'],
+    extensions: ['.js', '.jsx', '.css'],
 
     modules: [
       APP_PATH, 'node_modules'
