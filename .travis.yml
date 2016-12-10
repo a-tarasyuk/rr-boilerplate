@@ -7,7 +7,7 @@ env:
 
 install:
   - "npm --version"
-  - "npm i"
+  - "npm i -qs"
 
 script:
   - npm run build
