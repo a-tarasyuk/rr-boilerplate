@@ -9,7 +9,6 @@ import StyleLintPlugin from 'stylelint-webpack-plugin';
 export default merge({
   output: {
     path: `${ ROOT_PATH }/build`,
-    publicPath: '/',
     filename: 'bundle-[chunkhash].js',
     chunkFilename: 'chunk-[chunkhash].js'
   },

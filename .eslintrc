@@ -1,21 +1,27 @@
 {
   "parser": "babel-eslint",
-
-  "rules": {
-    "semi":   2,
-    "quotes": [2, "single"],
-    "key-spacing": [
-      2, {
-        "beforeColon": false,
-        "afterColon": true
-      }
-    ],
-    "eol-last": 0,
-    "strict": [2, "never"],
-    "camelcase": [2, {properties: "never"}],
-    "no-shadow": 0,
-    "indent": [2, 2, {VariableDeclarator: {"var": 2, "let": 2, "const": 2}}]
+  "extends": "airbnb",
+  "ecmaFeatures": {
+    "modules": true,
+    "es6": true,
+    "jsx": true,
+    "browser": true
   },
-
-  "globals": {}
+  "rules": {
+    "no-param-reassign": 0,
+    "object-curly-spacing": 2,
+    "max-len": ["error", 120],
+    "id-length": [2, {"min": 2, "properties": "never", "exceptions": ["x", "n", "i", "e", "$", "_", "g", "A"]}]
+  },
+  "settings": {
+    "import/ignore": ["node_modules"],
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack/dev.config.babel"
+      }
+    }
+  },
+  "globals": {
+    "document": true
+  }
 }

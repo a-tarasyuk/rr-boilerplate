@@ -5,7 +5,7 @@ const initialState = [
   { name: 'React Router Redux', href: 'https://github.com/reactjs/react-router-redux' },
   { name: 'Webpack-2', href: 'https://webpack.github.io' },
   { name: 'Babel', href: 'https://babeljs.io' },
-  { name: 'CSS-Modules', href: 'https://github.com/css-modules/css-modules' }
+  { name: 'CSS-Modules', href: 'https://github.com/css-modules/css-modules' },
 ];
 
 /**
@@ -16,6 +16,8 @@ const initialState = [
  *
  * @return {Array}
  */
-export function features(state = initialState, action) {
+function features(state = initialState) {
   return state;
 }
+
+export default features;
