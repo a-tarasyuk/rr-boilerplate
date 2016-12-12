@@ -8,7 +8,6 @@ install:
 
 script:
   - npm run build
-  - npm run deploy:pages
 
 cache:
   bundler: true
