@@ -1,6 +1,9 @@
 # React&Redux boilerplate
 > Lightweight React&Redux boilerplate
 
+### Status
+[![Build Status](https://travis-ci.org/NikolayGalkin/rr-boilerplate.svg?branch=master)](https://travis-ci.org/NikolayGalkin/rr-boilerplate)
+
 ### Getting started
 1. Clone this repository using `git clone --depth=1 https://github.com/a-tarasyuk/rr-boilerplate.git <YourProjectName>`
 2. Enter to your project `cd <YourProjectName>`
