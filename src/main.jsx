@@ -7,7 +7,6 @@ import storeConfig from './store';
 import routes from './routes';
 import './assets/styles/main.css';
 
-
 const store = storeConfig();
 const history = syncHistoryWithStore(browserHistory, store);
 // https://github.com/reactjs/react-router/blob/master/docs/guides/Histories.md
