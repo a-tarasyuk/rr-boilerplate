@@ -12,7 +12,8 @@
     "clean": "node_modules/.bin/rimraf build/",
     "build": "npm run clean && NODE_ENV=production node_modules/.bin/webpack --config webpack/prod.config.babel.js --progress",
     "start": "NODE_ENV=development node_modules/.bin/webpack-dev-server --config webpack/dev.config.babel.js --progress",
-    "start:production": "npm run build && node_modules/.bin/http-server build/ -p 9999 -o"
+    "start:production": "npm run build && node_modules/.bin/http-server build/ -p 9999 -o",
+    "deploy:pages": "./.deploy"
   },
   "devDependencies": {
     "babel": "^6.5.2",
