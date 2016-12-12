@@ -3,7 +3,7 @@ node_js:
   - "6"
 
 env:
-    - NODE_ENV=development
+  - NODE_ENV=development
 
 install:
   - "npm --version"
@@ -11,3 +11,8 @@ install:
 
 script:
   - npm run build
+
+cache:
+  bundler: true
+  directories:
+    - node_modules
