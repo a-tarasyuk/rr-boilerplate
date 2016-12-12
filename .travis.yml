@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+  - '6'
+env:
+  global:
+    - NODE_ENV=development
+    - GITHUB_REPO: NikolayGalkin/rr-boilerplate
+    - secure: mZg0iFoD5XB5+SMq2rEsC6F2/NpT49/RC4s0BboZ7Eeg1FZeJHFVUy4g3MeYPGesvLSJw7yHt7mcUCzW2AgcLHCQmbi01H+SbDoUfXdaaDg/ea5t09/ZK+vNFPZ1qpZjSll8SmgCZvqUBrwWMazXBoPB+TYZa0D9iDSCKXxOpByVma9ARQj68wY0WZIXVATV98+VkjMYJKhg0a+OfMEZHZNNXxX/TAVmjJo67qn9F95d2C9ifN5o3QPXjs7Irx1qfX3DCEx67RfeSSCo4/CgwgL7vTnZWRfMj2F1S6EjRvvKwfY+X7oyNWUuG9+byWOScW2pjv6t0T0rFIv2teVH+MMekfu+lIMnslxhHc2Sw6o8g68vJjkwp7f+ZQPODEBmybmpQW60A8Fq3yTIqmklPa0/u7ZFtP+yQeRes7t504u9UMejGvtBbktPKKjS72G+vrhCinPrrzbnu7vx5dugJJ3YwUZ4A50H2Sn5UigT5OjisUbqPkr0QbMCCbS1qSeNwgyrhmNKXOIN+AoFmc9tviuSyF1dixHQvr6HQe+vp+kT4b0pM3cZxSo+/8WozJs4LxERowDDGi7gIhjyfF1srIA8S9jtO5PHT54rdZJ1Pu9rVR7u9UjzxQ4cNJXjbM835SDSzNaVZCZewTPH6wgzsS8fRYq9DnFvUImizpWFsSI=
+
+install:
+  - npm --version
+  - npm i -qs
+
+script:
+  - npm run build
+  - npm run deploy:pages
+
+cache:
+  bundler: true
+  directories:
+    - node_modules
