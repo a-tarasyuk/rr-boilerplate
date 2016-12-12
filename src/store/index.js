@@ -1,6 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import ReduxLoger from 'redux-logger';
 import reducers from '../reducers';
 
 const middlewares = [
@@ -8,9 +7,7 @@ const middlewares = [
 ];
 
 if (process.env.NODE_ENV === 'development') {
-  middlewares.push(
-    ReduxLoger({}),
-  );
+  middlewares.push(require('redux-logger')({}));
 }
 
 const create = compose(

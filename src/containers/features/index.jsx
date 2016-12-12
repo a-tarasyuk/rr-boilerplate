@@ -11,9 +11,11 @@ const Features = ({ features }) => {
     </li>
   ));
 
-  return (<ol className={styles.features}>
-    {features}
-  </ol>);
+  return (
+    <ol className={styles.features}>
+      {features}
+    </ol>
+  );
 };
 
 Features.propTypes = {
