@@ -38,6 +38,10 @@ export default merge({
     })
   ],
 
+  performance: {
+    hints: false
+  },
+
   devServer: {
     noInfo: false,
     open: true,
