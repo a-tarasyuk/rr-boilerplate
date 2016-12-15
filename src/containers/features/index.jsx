@@ -1,8 +1,7 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import A from 'components/a';
+import A from '../../components/a';
 import styles from './styles.css';
-
 
 const Features = ({ features }) => {
   features = features.map((feature, index) => (
