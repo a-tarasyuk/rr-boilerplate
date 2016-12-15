@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import Header from 'components/header';
+import Header from '../../components/header';
 import styles from './styles.css';
 
 const Root = ({ children }) => (
