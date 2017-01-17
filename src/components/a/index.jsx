@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import styles from './styles.css';
 
-const A = ({ href, name, title = '' }) => (
+const A = ({ href, name, title }) => (
   <a
     href={href}
     target="blank"
@@ -16,6 +16,10 @@ A.propTypes = {
   href: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   title: PropTypes.string,
+};
+
+A.defaultProps = {
+  title: '',
 };
 
 export default A;
