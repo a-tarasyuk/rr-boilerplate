@@ -8,13 +8,14 @@
     "browser": true
   },
   "rules": {
+    "global-require": 0,
     "no-param-reassign": 0,
     "object-curly-spacing": 2,
     "max-len": ["error", 120],
     "id-length": [
       2, {"min": 2, "properties": "never", "exceptions": ["x", "n", "i", "e", "$", "_", "g", "A"]}
     ],
-    "global-require": 0
+    "react/no-array-index-key": 0
   },
   "settings": {
     "import/ignore": ["node_modules"],
