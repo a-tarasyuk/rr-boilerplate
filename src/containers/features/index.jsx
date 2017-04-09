@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import A from '../../components/a';
 import styles from './styles.css';
@@ -18,7 +19,7 @@ const Features = ({ features }) => {
 };
 
 Features.propTypes = {
-  features: PropTypes.arrayOf(React.PropTypes.object).isRequired,
+  features: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default connect(

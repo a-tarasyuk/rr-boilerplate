@@ -1,23 +1,24 @@
 import React from 'react';
-import { Link, IndexLink } from 'react-router';
+import { NavLink } from 'react-router-dom';
 import styles from './styles.css';
 
 export default () => (
   <div className={styles.header}>
-    <IndexLink
+    <NavLink
       to="/"
+      exact
       className={styles.link}
       activeClassName={styles.link_active}
     >
       Home
-    </IndexLink>
+    </NavLink>
 
-    <Link
+    <NavLink
       to="/features"
       className={styles.link}
       activeClassName={styles.link_active}
     >
       Libraries/Tools
-    </Link>
+    </NavLink>
   </div>
 );
