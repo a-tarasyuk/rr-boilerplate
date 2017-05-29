@@ -12,7 +12,7 @@
 - [React](https://facebook.github.io/react)
 - [Redux](https://github.com/rackt/redux)
 - [React Router Dom - 4.0.0](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
-- [React Router Redux - **5.0.0-alpha.4**](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux)
+- [React Router Redux - **5.0.0-alpha.6**](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux)
 - [Webpack-2](https://webpack.github.io)
 - [Babel](https://babeljs.io)
 - [CSS-Modules](https://github.com/css-modules/css-modules)
