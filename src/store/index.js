@@ -1,17 +1,34 @@
-import { createStore, applyMiddleware, compose } from 'redux';
+import {
+  createStore,
+  applyMiddleware,
+} from 'redux';
+
+import {
+  routerMiddleware,
+} from 'react-router-redux';
+
+import createBrowserHistory from 'history/createBrowserHistory';
 import thunk from 'redux-thunk';
 import reducers from '../reducers';
 
+const history = createBrowserHistory();
 const middlewares = [
   thunk,
+  routerMiddleware(history),
 ];
 
 if (process.env.NODE_ENV === 'development') {
-  middlewares.push(require('redux-logger')({}));
+  middlewares.push(
+    require('redux-logger').createLogger({}),
+  );
 }
 
-const create = compose(
+const store = createStore(
+  reducers,
   applyMiddleware(...middlewares),
-)(createStore);
+);
 
-export default () => create(reducers, {});
+export {
+  store,
+  history,
+};
