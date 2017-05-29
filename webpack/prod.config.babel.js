@@ -33,6 +33,8 @@ export default merge({
   },
 
   plugins: [
+    new webpack.NoEmitOnErrorsPlugin(),
+
     new StyleLintPlugin({
       configFile: '.stylelintrc',
       context: APP_PATH,
@@ -47,7 +49,16 @@ export default merge({
       compress: {
         warnings: false,
         drop_console: true,
-        drop_debugger: true
+        drop_debugger: true,
+        screw_ie8: true,
+        conditionals: true,
+        unused: true,
+        comparisons: true,
+        sequences: true,
+        dead_code: true,
+        evaluate: true,
+        if_return: true,
+        join_vars: true,
       },
       output: {
         ascii_only: true,

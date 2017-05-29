@@ -11,8 +11,8 @@
 ### Libraries/Tools
 - [React](https://facebook.github.io/react)
 - [Redux](https://github.com/rackt/redux)
-- [React Router](https://github.com/reactjs/react-router)
-- [React Router Redux](https://github.com/reactjs/react-router-redux)
+- [React Router Dom - 4.0.0](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
+- [React Router Redux - **5.0.0-alpha.4**](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux)
 - [Webpack-2](https://webpack.github.io)
 - [Babel](https://babeljs.io)
 - [CSS-Modules](https://github.com/css-modules/css-modules)
@@ -20,4 +20,4 @@
 ### NPM tasks
 - `npm start` - starts local web server
 - `npm run start:production`- starts production build and run local web server
-- `npm run build` - starts production build*(puts result to `build` folder)*
+- `npm run build` - starts production build *(puts result to `build` folder)*
