@@ -35,35 +35,37 @@ export default merge({
       configFile: '.stylelintrc',
       context: APP_PATH,
       files: '**/*.css'
-    })
+    }),
   ],
 
   performance: {
-    hints: false
+    hints: false,
   },
 
   devServer: {
+    historyApiFallback: true,
+    contentBase: APP_PATH,
+    openPage: '',
+    inline: true,
     noInfo: false,
     open: true,
-    hot: false,
-    inline: true,
+    port: 9999,
+
     stats: {
-      colors: true,
-      hash: true,
+      errorDetails: true,
+      publicPath: false,
+      children: false,
+      warnings: true,
       version: true,
+      modules: false,
       timings: true,
+      reasons: false,
+      colors: true,
       assets: true,
       chunks: false,
-      modules: false,
-      reasons: false,
-      children: false,
       source: false,
       errors: true,
-      errorDetails: true,
-      warnings: true,
-      publicPath: false
+      hash: true,
     },
-    port: 9999,
-    historyApiFallback: true
-  }
+  },
 }, CONFIG);
