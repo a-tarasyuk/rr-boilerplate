@@ -11,7 +11,7 @@ const initialState = [{
   name: 'React Router Redux',
   href: 'https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux',
 }, {
-  name: 'Webpack-2',
+  name: 'Webpack-3',
   href: 'https://webpack.github.io',
 }, {
   name: 'Babel',

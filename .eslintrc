@@ -7,7 +7,7 @@
     "jest": true,
     "es6": true
   },
-  plugins": [
+  "plugins": [
     "react",
     "jsx-a11y"
   ],
@@ -28,11 +28,6 @@
   },
   "settings": {
     "import/ignore": ["node_modules"],
-    "import/resolver": {
-      "webpack": {
-        "config": "webpack/dev.config.babel"
-      }
-    }
   },
   "globals": {
     "document": true
