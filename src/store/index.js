@@ -17,7 +17,7 @@ const middlewares = [
   routerMiddleware(history),
 ];
 
-if (process.env.NODE_ENV === 'development') {
+if (__DEV__) {
   middlewares.push(
     require('redux-logger').createLogger({}),
   );

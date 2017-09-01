@@ -9,7 +9,7 @@ const A = ({ href, name, title }) => (
     title={title || name}
     className={styles.link}
   >
-    {name}
+    { name }
   </a>
 );
 

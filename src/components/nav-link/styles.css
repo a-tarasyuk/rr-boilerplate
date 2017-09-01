@@ -1,0 +1,16 @@
+.nav-link {
+  font-size: 1.8em;
+  color: #3572b0;
+  display: inline-block;
+  margin: 0 10px 0 0;
+  text-decoration: none;
+
+  &_active {
+    text-decoration: underline;
+  }
+
+  &:hover {
+    color: #ccc;
+  }
+}
+

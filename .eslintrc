@@ -30,6 +30,7 @@
     "import/ignore": ["node_modules"],
   },
   "globals": {
-    "document": true
+    "document": true,
+    "__DEV__": true,
   }
 }
