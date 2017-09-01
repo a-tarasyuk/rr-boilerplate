@@ -6,8 +6,6 @@ export const APP_PATH  = `${ ROOT_PATH }/src`;
 export const CONFIG = {
   target: 'web',
 
-  entry: `${ APP_PATH }/main`,
-
   module: {
     rules: [
       { test: /\.jsx?$/, loader: 'eslint-loader', enforce: 'pre', exclude: /node_modules/ },
@@ -27,6 +25,7 @@ export const CONFIG = {
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+        'BABEL_ENV': JSON.stringify(process.env.NODE_ENV),
       },
       '__DEV__': process.env.NODE_ENV === 'development',
     })
