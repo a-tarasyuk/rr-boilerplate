@@ -1,9 +1,15 @@
 import { CONFIG, APP_PATH } from './config';
+import { HotModuleReplacementPlugin, NamedModulesPlugin } from 'webpack';
 import merge from 'webpack-merge';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
 
 export default merge({
+  entry: [
+    'react-hot-loader/patch',
+    `${ APP_PATH }/hot-reload`,
+  ],
+
   devtool: 'source-map',
 
   module: {
@@ -25,12 +31,13 @@ export default merge({
   },
 
   plugins: [
+    new HotModuleReplacementPlugin(),
+    new NamedModulesPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
       template: `${ APP_PATH }/template.html`,
       favicon: `${ APP_PATH }/assets/images/favicon.ico`
     }),
-
     new StyleLintPlugin({
       configFile: '.stylelintrc',
       context: APP_PATH,
@@ -50,6 +57,7 @@ export default merge({
     noInfo: false,
     open: true,
     port: 9999,
+    hot: true,
 
     stats: {
       errorDetails: true,

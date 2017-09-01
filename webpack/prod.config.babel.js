@@ -7,6 +7,8 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
 
 export default merge({
+  entry: `${ APP_PATH }/main`,
+  
   output: {
     chunkFilename: 'chunk-[chunkhash].js',
     filename: 'bundle-[chunkhash].js',

@@ -1,5 +1,5 @@
 const initialState = [{
-  name: 'React',
+  name: 'Reactxx',
   href: 'https://facebook.github.io/react',
 }, {
   name: 'Redux',
