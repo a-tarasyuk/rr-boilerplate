@@ -16,9 +16,9 @@ export default merge({
   module: {
     rules: [{
       test: /\.css$/,
-      loader: ExtractTextPlugin.extract({
-        fallbackLoader: 'style-loader',
-        loader: [{
+      use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: [{
           loader: 'css-loader',
           query: {
             modules: true,

@@ -1,24 +1,15 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import styles from './styles.css';
 
-export default () => (
+const Header = ({ children }) => (
   <div className={styles.header}>
-    <NavLink
-      to="/"
-      exact
-      className={styles.link}
-      activeClassName={styles.link_active}
-    >
-      Home
-    </NavLink>
-
-    <NavLink
-      to="/features"
-      className={styles.link}
-      activeClassName={styles.link_active}
-    >
-      Libraries/Tools
-    </NavLink>
+    { children }
   </div>
 );
+
+Header.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+export default Header;
