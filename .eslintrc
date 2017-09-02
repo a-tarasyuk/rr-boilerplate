@@ -26,9 +26,6 @@
     "max-len": ["error", 120],
     "react/no-array-index-key": 0,
     "import/prefer-default-export": 0,
-    "no-shadow": 0,
-    "react/prop-types": 0,
-    "operator-assignment": 0
   },
   "settings": {
     "import/ignore": ["node_modules"],
@@ -36,5 +33,6 @@
   "globals": {
     "document": true,
     "__DEV__": true,
+    "__PROD__": true,
   }
 }

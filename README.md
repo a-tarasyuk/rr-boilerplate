@@ -16,6 +16,7 @@
 - [Webpack-3](https://webpack.github.io)
 - [Babel](https://babeljs.io)
 - [CSS-Modules](https://github.com/css-modules/css-modules)
+- [HMR](https://webpack.js.org/concepts/hot-module-replacement/)
 
 ### NPM tasks
 - `npm start` - starts local web server

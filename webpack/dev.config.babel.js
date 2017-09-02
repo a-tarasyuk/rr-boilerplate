@@ -7,7 +7,6 @@ import StyleLintPlugin from 'stylelint-webpack-plugin';
 export default merge({
   entry: [
     'react-hot-loader/patch',
-    `${ APP_PATH }/hot-reload`,
   ],
 
   devtool: 'source-map',
