@@ -1,10 +1,12 @@
+import { Route } from 'react-router-dom';
 import React from 'react';
-import PropTypes from 'prop-types';
 import Header from '../../components/header';
 import NavLink from '../../components/nav-link';
+import Home from '../home';
+import Features from '../features';
 import styles from './styles.css';
 
-const Root = ({ children }) => (
+const Root = () => (
   <div className={styles.root}>
     <Header>
       <NavLink href={'/'}>Home</NavLink>
@@ -12,14 +14,10 @@ const Root = ({ children }) => (
     </Header>
 
     <div className={styles.content}>
-      {children}
+      <Route path="/" exact component={Home} />
+      <Route path="/features" component={Features} />
     </div>
   </div>
 );
 
-Root.propTypes = {
-  children: PropTypes.node.isRequired,
-};
-
 export default Root;
-
