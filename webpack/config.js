@@ -13,7 +13,7 @@ export const CONFIG = {
   module: {
     rules: [
       { test: /\.jsx?$/, loader: 'eslint-loader', enforce: 'pre', exclude: /node_modules/ },
-      { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ }
+      { test: /\.jsx?$/, use: ['thread-loader', 'babel-loader'], exclude: /node_modules/ }
     ]
   },
 

@@ -25,7 +25,6 @@
     "object-curly-spacing": 2,
     "max-len": ["error", 120],
     "react/no-array-index-key": 0,
-    "import/prefer-default-export": 0,
   },
   "settings": {
     "import/ignore": ["node_modules"],
