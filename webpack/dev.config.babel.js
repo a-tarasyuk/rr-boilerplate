@@ -9,7 +9,7 @@ export default merge({
     'react-hot-loader/patch',
   ],
 
-  devtool: 'source-map',
+  devtool: 'cheap-module-eval-source-map',
 
   module: {
     rules: [{
