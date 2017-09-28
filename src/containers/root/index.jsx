@@ -14,8 +14,8 @@ const Root = () => (
     </Header>
 
     <div className={styles.content}>
-      <Route path="/" exact component={Home} />
-      <Route path="/features" component={Features} />
+      <Route path={'/'} exact component={Home} />
+      <Route path={'/features'} component={Features} />
     </div>
   </div>
 );
