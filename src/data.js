@@ -1,5 +1,5 @@
 const FEATURES = [{
-  name: 'React',
+  name: 'React 16.*',
   href: 'http://facebook.github.io/react',
 }, {
   name: 'Redux',
