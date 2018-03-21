@@ -1,4 +1,7 @@
-# React&Redux boilerplate [![Build Status](https://travis-ci.org/a-tarasyuk/rr-boilerplate.svg?branch=master)](https://travis-ci.org/a-tarasyuk/rr-boilerplate)
+# React&Redux boilerplate
+
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/a-tarasyuk/rr-boilerplate/blob/master/LICENSE) [![Build Status](https://img.shields.io/travis/a-tarasyuk/rr-boilerplate/master.svg?style=flat-square)](https://travis-ci.org/a-tarasyuk/rr-boilerplate) [![David](https://img.shields.io/david/a-tarasyuk/rr-boilerplate.svg?style=flat-square)](https://github.com/a-tarasyuk/rr-boilerplate) [![David](https://img.shields.io/david/dev/a-tarasyuk/rr-boilerplate.svg?style=flat-square)](https://github.com/a-tarasyuk/rr-boilerplate)
+
 > Lightweight React&Redux boilerplate
 
 ### Getting started
@@ -9,11 +12,10 @@
 5. Go to `http://localhost:9999`
 
 ### Libraries/Tools
-- [React 16.*](https://facebook.github.io/react)
+- [React 16](https://facebook.github.io/react)
 - [Redux](https://github.com/rackt/redux)
-- [React Router Dom - 4.0.0](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
-- [React Router Redux - **5.0.0-alpha.6**](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux)
-- [Webpack-3](https://webpack.github.io)
+- [React Router Dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
+- [Webpack](https://webpack.github.io)
 - [Babel](https://babeljs.io)
 - [CSS-Modules](https://github.com/css-modules/css-modules)
 - [HMR](https://webpack.js.org/concepts/hot-module-replacement/)

@@ -1,4 +1,5 @@
 import { Route } from 'react-router-dom';
+import { hot } from 'react-hot-loader';
 import React from 'react';
 import Header from '../../components/header';
 import NavLink from '../../components/nav-link';
@@ -20,4 +21,4 @@ const Root = () => (
   </div>
 );
 
-export default Root;
+export default hot(module)(Root);

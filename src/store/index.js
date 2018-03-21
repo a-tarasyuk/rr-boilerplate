@@ -1,13 +1,9 @@
 import { createStore, applyMiddleware } from 'redux';
-import { routerMiddleware } from 'react-router-redux';
 import thunk from 'redux-thunk';
 import reducers from '../reducers';
 
-const configureStore = (initialState, history) => {
-  const middlewares = [
-    thunk,
-    routerMiddleware(history),
-  ];
+const configureStore = (initialState) => {
+  const middlewares = [thunk];
 
   if (__DEV__) {
     middlewares.push(
@@ -21,10 +17,6 @@ const configureStore = (initialState, history) => {
     initialState,
     applyMiddleware(...middlewares),
   );
-
-  if (module.hot) {
-    module.hot.accept('../reducers', () => store.replaceReducer(reducers));
-  }
 
   return store;
 };

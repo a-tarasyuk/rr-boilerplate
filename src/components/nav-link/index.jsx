@@ -5,10 +5,10 @@ import styles from './styles.css';
 
 const NavLink = ({ children, href }) => (
   <Link
+    activeClassName={styles['nav-link_active']}
+    className={styles['nav-link']}
     to={href}
     exact
-    className={styles['nav-link']}
-    activeClassName={styles['nav-link_active']}
   >
     { children }
   </Link>

@@ -4,10 +4,10 @@ import styles from './styles.css';
 
 const A = ({ href, name, title }) => (
   <a
-    href={href}
-    target="blank"
-    title={title || name}
     className={styles.link}
+    target={'blank'}
+    href={href}
+    title={title || name}
   >
     { name }
   </a>
