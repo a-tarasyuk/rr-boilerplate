@@ -1,84 +1,58 @@
 import { CONFIG, ROOT_PATH, APP_PATH } from './config';
-import webpack from 'webpack';
+import cssNano from 'cssnano';
 import merge from 'webpack-merge';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import path from 'path';
+import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
+import MiniExtractTextPlugin from 'mini-css-extract-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import UglifyJSPlugin from 'uglifyjs-webpack-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
-import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 
 export default merge({
-
+  mode: 'production',
   output: {
     chunkFilename: 'chunk-[chunkhash].js',
     filename: 'bundle-[chunkhash].js',
-    path: `${ ROOT_PATH }/build`,
+    path: path.join(ROOT_PATH, 'build'),
   },
 
   module: {
     rules: [{
       test: /\.css$/,
-      use: ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: [{
-          loader: 'css-loader',
-          query: {
-            modules: true,
-            minimize: true,
-            localIdentName: '[hash:base64:8]',
-          }
-        }, {
-          loader: 'postcss-loader',
-        }]
-      })
+      use: [MiniExtractTextPlugin.loader, {
+        loader: 'css-loader',
+        query: {
+          modules: true,
+          localIdentName: '[hash:base64:8]',
+        }
+      }, {
+        loader: 'postcss-loader',
+      }]
     }]
   },
 
   plugins: [
-    new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.optimize.ModuleConcatenationPlugin(),
-    new webpack.optimize.OccurrenceOrderPlugin(true),
-    new UglifyJsPlugin({
-      uglifyOptions: {
-        compress: {
-          drop_debugger: true,
-          drop_console: true,
-          conditionals: true,
-          comparisons: true,
-          sequences: true,
-          if_return: true,
-          dead_code: true,
-          join_vars: true,
-          evaluate: true,
-          warnings: false,
-          unused: true,
-        },
-        output: {
-          ascii_only: true,
-          comments: false,
-        },
-        ie8: false,
-      },
-      extractComments: false,
-      sourceMap: false,
-      parallel: true,
-    }),
-
     new StyleLintPlugin({
       failOnError: true,
       configFile: '.stylelintrc',
       context: APP_PATH,
       files: '**/*.css',
     }),
-
-    new ExtractTextPlugin({
-      allChunks: true,
-      filename: 'bundle-[hash].css',
+    new MiniExtractTextPlugin({ filename: 'bundle-[hash].css' }),
+    new OptimizeCSSAssetsPlugin({
+      cssProcessor: cssNano,
+      cssProcessorOptions: {
+        zindex: false,
+      },
+      cssProcessorPluginOptions: {
+        preset: ['default', { discardComments: { removeAll: true } }],
+      },
+      canPrint: true,
     }),
-
     new HtmlWebpackPlugin({
       inject: true,
-      favicon: `${ APP_PATH }/assets/images/favicon.ico`,
+      favicon: path.join(APP_PATH, 'assets', 'images', 'favicon.ico'),
       minify: {
         removeStyleLinkTypeAttributes: true,
         removeRedundantAttributes: true,
@@ -91,12 +65,34 @@ export default merge({
         minifyCSS: true,
         minifyJS: true,
       },
-      template: `${ APP_PATH }/template.html`
+      template: path.join(APP_PATH, 'template.html')
     }),
+    new CompressionPlugin({ algorithm: 'gzip', asset: '[path].gz' }),
+  ],
 
-    new CompressionPlugin({
-      algorithm: 'gzip',
-      asset: '[path].gz',
-    }),
-  ]
+  optimization: {
+    concatenateModules: true,
+
+    minimizer: [
+      new UglifyJSPlugin({
+        uglifyOptions: {
+          compress: {
+            drop_debugger: true,
+            drop_console: true,
+            dead_code: true,
+            inline: 1,
+          },
+
+          output: {
+            comments: false,
+            beautify: false,
+          },
+        },
+
+        sourceMap: false,
+        parallel: true,
+        cache: true,
+      }),
+    ],
+  },
 }, CONFIG);

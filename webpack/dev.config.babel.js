@@ -1,10 +1,12 @@
+import { HotModuleReplacementPlugin } from 'webpack';
 import { CONFIG, APP_PATH } from './config';
-import { HotModuleReplacementPlugin, NamedModulesPlugin } from 'webpack';
-import merge from 'webpack-merge';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
+import merge from 'webpack-merge';
+import path from 'path';
 
 export default merge({
+  mode: 'development',
   entry: [
     'react-hot-loader/patch',
   ],
@@ -20,22 +22,21 @@ export default merge({
         loader: 'css-loader',
         query: {
           modules: true,
-          localIdentName: '[local]__[path][name]__[hash:base64:5]'
+          localIdentName: '[path][local]__[name]__[hash:base64:5]'
         }
       }, {
         loader: 'postcss-loader'
       }],
-      exclude: /node_modules/
+      include: APP_PATH,
     }]
   },
 
   plugins: [
     new HotModuleReplacementPlugin(),
-    new NamedModulesPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
-      template: `${ APP_PATH }/template.html`,
-      favicon: `${ APP_PATH }/assets/images/favicon.ico`
+      template: path.join(APP_PATH, 'template.html'),
+      favicon: path.join(APP_PATH, 'assets', 'images', 'favicon.ico'),
     }),
     new StyleLintPlugin({
       configFile: '.stylelintrc',
@@ -48,12 +49,17 @@ export default merge({
     hints: false,
   },
 
+  optimization: {
+    removeAvailableModules: false,
+    removeEmptyChunks: false,
+    splitChunks: false,
+  },
+
   devServer: {
     historyApiFallback: true,
     contentBase: APP_PATH,
     openPage: '',
     inline: true,
-    noInfo: false,
     open: true,
     port: 9999,
     hot: true,
