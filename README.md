@@ -12,7 +12,7 @@
 5. Go to `http://localhost:9999`
 
 ### Libraries/Tools
-- [React 16](https://facebook.github.io/react)
+- [React](https://facebook.github.io/react)
 - [Redux](https://github.com/rackt/redux)
 - [React Router Dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
 - [Webpack](https://webpack.github.io)
