@@ -27,14 +27,14 @@
     "no-param-reassign": 0,
     "global-require": 0,
     "no-console": 1,
-    "max-len": ["error", 120],
+    "max-len": ["error", 120]
   },
   "settings": {
-    "import/ignore": ["node_modules"],
+    "import/ignore": ["node_modules"]
   },
   "globals": {
     "document": true,
     "__DEV__": true,
-    "__PROD__": true,
+    "__PROD__": true
   }
 }

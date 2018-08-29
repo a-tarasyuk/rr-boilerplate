@@ -1,6 +1,7 @@
 {
   "presets": [
-    ["es2015", { "modules": false }], "react", "stage-0"
+    ["@babel/preset-env", { "targets": { "browsers": ["last 2 versions"] } }],
+    ["@babel/preset-react", {}]
   ],
   "env": {
     "development": {
