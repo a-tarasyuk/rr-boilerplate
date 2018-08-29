@@ -3,6 +3,7 @@ import { CONFIG, APP_PATH } from './config';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
 import merge from 'webpack-merge';
+import path from 'path';
 
 export default merge({
   mode: 'development',
@@ -34,8 +35,8 @@ export default merge({
     new HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
-      template: `${ APP_PATH }/template.html`,
-      favicon: `${ APP_PATH }/assets/images/favicon.ico`
+      template: path.join(APP_PATH, 'template.html'),
+      favicon: path.join(APP_PATH, 'assets', 'images', 'favicon.ico'),
     }),
     new StyleLintPlugin({
       configFile: '.stylelintrc',

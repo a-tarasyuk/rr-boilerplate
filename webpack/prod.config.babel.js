@@ -1,6 +1,7 @@
 import { CONFIG, ROOT_PATH, APP_PATH } from './config';
 import cssNano from 'cssnano';
 import merge from 'webpack-merge';
+import path from 'path';
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import MiniExtractTextPlugin from 'mini-css-extract-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
@@ -13,7 +14,7 @@ export default merge({
   output: {
     chunkFilename: 'chunk-[chunkhash].js',
     filename: 'bundle-[chunkhash].js',
-    path: `${ ROOT_PATH }/build`,
+    path: path.join(ROOT_PATH, 'build'),
   },
 
   module: {
@@ -51,7 +52,7 @@ export default merge({
     }),
     new HtmlWebpackPlugin({
       inject: true,
-      favicon: `${ APP_PATH }/assets/images/favicon.ico`,
+      favicon: path.join(APP_PATH, 'assets', 'images', 'favicon.ico'),
       minify: {
         removeStyleLinkTypeAttributes: true,
         removeRedundantAttributes: true,
@@ -64,12 +65,9 @@ export default merge({
         minifyCSS: true,
         minifyJS: true,
       },
-      template: `${ APP_PATH }/template.html`
+      template: path.join(APP_PATH, 'template.html')
     }),
-    new CompressionPlugin({
-      algorithm: 'gzip',
-      asset: '[path].gz',
-    }),
+    new CompressionPlugin({ algorithm: 'gzip', asset: '[path].gz' }),
   ],
 
   optimization: {
