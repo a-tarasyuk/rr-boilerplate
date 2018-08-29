@@ -2,7 +2,7 @@ import webpack from 'webpack';
 import path from 'path';
 
 export const ROOT_PATH = path.join(__dirname, '..');
-export const APP_PATH  = `${ ROOT_PATH }/src`;
+export const APP_PATH  = path.join(ROOT_PATH, 'src');
 
 export const CONFIG = {
   target: 'web',
