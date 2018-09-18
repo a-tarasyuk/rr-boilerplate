@@ -67,7 +67,7 @@ export default merge({
       },
       template: path.join(APP_PATH, 'template.html')
     }),
-    new CompressionPlugin({ algorithm: 'gzip', asset: '[path].gz' }),
+    new CompressionPlugin({ algorithm: 'gzip', filename: '[path].gz' }),
   ],
 
   optimization: {
