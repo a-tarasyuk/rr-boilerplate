@@ -4,7 +4,7 @@ import path from 'path';
 export const ROOT_PATH = path.join(__dirname, '..');
 export const APP_PATH  = path.join(ROOT_PATH, 'src');
 
-export const CONFIG = {
+export const buildConfig = (env, argv) => ({
   target: 'web',
   entry: [
     path.join(APP_PATH, 'index'),
@@ -28,11 +28,11 @@ export const CONFIG = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-        'BABEL_ENV': JSON.stringify(process.env.NODE_ENV),
+        'NODE_ENV': JSON.stringify(argv.mode),
+        'BABEL_ENV': JSON.stringify(argv.mode),
       },
-      '__DEV__': process.env.NODE_ENV === 'development',
-      '__PROD__': process.env.NODE_ENV === 'production',
+      '__PROD__': argv.mode === 'production',
+      '__DEV__': argv.mode === 'development',
     })
   ]
-};
+});

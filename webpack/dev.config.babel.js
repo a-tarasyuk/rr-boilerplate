@@ -1,12 +1,11 @@
 import { HotModuleReplacementPlugin } from 'webpack';
-import { CONFIG, APP_PATH } from './config';
+import { buildConfig, APP_PATH } from './config';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
 import merge from 'webpack-merge';
 import path from 'path';
 
-export default merge({
-  mode: 'development',
+export default (env, argv) => merge(buildConfig(env, argv), {
   entry: [
     'react-hot-loader/patch',
   ],
@@ -81,4 +80,4 @@ export default merge({
       hash: true,
     },
   },
-}, CONFIG);
+});

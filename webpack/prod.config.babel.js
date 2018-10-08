@@ -1,4 +1,4 @@
-import { CONFIG, ROOT_PATH, APP_PATH } from './config';
+import { buildConfig, ROOT_PATH, APP_PATH } from './config';
 import cssNano from 'cssnano';
 import merge from 'webpack-merge';
 import path from 'path';
@@ -9,12 +9,12 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import UglifyJSPlugin from 'uglifyjs-webpack-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
 
-export default merge({
+export default (env, argv) => merge(buildConfig(env, argv), {
   mode: 'production',
   output: {
     chunkFilename: 'chunk-[chunkhash].js',
     filename: 'bundle-[chunkhash].js',
-    path: path.join(ROOT_PATH, 'build'),
+    path: path.join(ROOT_PATH, 'dist'),
   },
 
   module: {
@@ -78,7 +78,7 @@ export default merge({
         uglifyOptions: {
           compress: {
             drop_debugger: true,
-            drop_console: true,
+            drop_console: false,
             dead_code: true,
             inline: 1,
           },
@@ -95,4 +95,4 @@ export default merge({
       }),
     ],
   },
-}, CONFIG);
+});
