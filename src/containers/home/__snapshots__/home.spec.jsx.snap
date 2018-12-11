@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Home /> matches its snapshot 1`] = `
+<div
+  className="home"
+>
+  <h1
+    className="title"
+  >
+    rr-boilerplate
+  </h1>
+  <p
+    className="description"
+  >
+    Lightweight React&Redux boilerplate
+  </p>
+</div>
+`;

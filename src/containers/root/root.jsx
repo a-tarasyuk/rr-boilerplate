@@ -7,15 +7,15 @@ import { Home } from '../home';
 import styles from './root.css';
 
 export const Root = () => (
-  <div className={styles.root}>
+  <div className={ styles.root }>
     <Header>
-      <NavLink href={'/'}>Home</NavLink>
-      <NavLink href={'/features'}>Libraries/Tools</NavLink>
+      <NavLink href={ '/' }>Home</NavLink>
+      <NavLink href={ '/features' }>Libraries/Tools</NavLink>
     </Header>
 
-    <div className={styles.content}>
-      <Route path={'/'} exact component={Home} />
-      <Route path={'/features'} component={Features} />
+    <div className={ styles.content }>
+      <Route path={ '/' } exact component={ Home } />
+      <Route path={ '/features' } component={ Features } />
     </div>
   </div>
 );

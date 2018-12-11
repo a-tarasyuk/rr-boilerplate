@@ -22,5 +22,6 @@
 
 ### NPM tasks
 - `npm start` - starts local web server
+- `npm test` - runs tests
 - `npm run start:prod`- starts production build and run the local web server
 - `npm run build` - starts production build *(puts result to `build` folder)*

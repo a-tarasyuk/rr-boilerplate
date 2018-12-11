@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Features /> matches its snapshot 1`] = `
+<ol
+  className="features"
+>
+  <li
+    className="feature"
+    key="0"
+  >
+    <Link
+      href="http://facebook.github.io/react"
+      name="React"
+      title=""
+    />
+  </li>
+</ol>
+`;

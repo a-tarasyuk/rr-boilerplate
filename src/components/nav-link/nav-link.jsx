@@ -5,9 +5,9 @@ import styles from './nav-link.css';
 
 export const NavLink = ({ children, href }) => (
   <Link
-    activeClassName={styles['nav-link_active']}
-    className={styles['nav-link']}
-    to={href}
+    activeClassName={ styles['nav-link_active'] }
+    className={ styles['nav-link'] }
+    to={ href }
     exact
   >
     { children }

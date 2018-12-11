@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Root /> matches its snapshot 1`] = `
+<div
+  className="root"
+>
+  <Header>
+    <NavLink
+      href="/"
+    >
+      Home
+    </NavLink>
+    <NavLink
+      href="/features"
+    >
+      Libraries/Tools
+    </NavLink>
+  </Header>
+  <div
+    className="content"
+  >
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <Route
+      component={[Function]}
+      path="/features"
+    />
+  </div>
+</div>
+`;

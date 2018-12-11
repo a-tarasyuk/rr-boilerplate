@@ -11,7 +11,7 @@ import './assets/styles/main.css';
 const store = configureStore(INITIAL_STATE);
 
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store={ store }>
     <HashRouter>
       <Root />
     </HashRouter>

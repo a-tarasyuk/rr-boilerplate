@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Link /> matches its snapshot 1`] = `
+<a
+  className="link"
+  href="http://localhost"
+  target="blank"
+  title="Name"
+>
+  Name
+</a>
+`;

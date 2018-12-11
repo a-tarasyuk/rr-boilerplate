@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './header.css';
 
 export const Header = ({ children }) => (
-  <div className={styles.header}>
+  <div className={ styles.header }>
     { children }
   </div>
 );
