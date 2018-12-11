@@ -19,6 +19,9 @@ const FEATURES = [{
 }, {
   name: 'HMR',
   href: 'https://webpack.js.org/concepts/hot-module-replacement/',
+}, {
+  name: 'Jest',
+  href: 'https://jestjs.io/',
 }];
 
 export default {

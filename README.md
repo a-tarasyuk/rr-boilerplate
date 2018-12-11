@@ -19,6 +19,7 @@
 - [Babel](https://babeljs.io)
 - [CSS-Modules](https://github.com/css-modules/css-modules)
 - [HMR](https://webpack.js.org/concepts/hot-module-replacement/)
+- [Jest](https://jestjs.io/)
 
 ### NPM tasks
 - `npm start` - starts local web server
