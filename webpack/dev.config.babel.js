@@ -44,6 +44,12 @@ export default (env, argv) => merge(buildConfig(env, argv), {
     }),
   ],
 
+  resolve: {
+    alias: {
+      'react-dom': '@hot-loader/react-dom',
+    }
+  },
+
   performance: {
     hints: false,
   },

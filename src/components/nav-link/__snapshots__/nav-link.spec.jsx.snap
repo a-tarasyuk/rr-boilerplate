@@ -3,7 +3,6 @@
 exports[`<NavLink /> matches its snapshot 1`] = `
 <NavLink
   activeClassName="nav-link_active"
-  aria-current="page"
   className="nav-link"
   exact={true}
   to="http://localhost"
