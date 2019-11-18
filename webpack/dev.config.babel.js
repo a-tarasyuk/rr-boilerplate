@@ -16,18 +16,19 @@ export default (env, argv) => merge(buildConfig(env, argv), {
     rules: [{
       test: /\.css$/,
       use: [{
-        loader: 'style-loader'
+        loader: 'style-loader',
       }, {
         loader: 'css-loader',
         query: {
-          modules: true,
-          localIdentName: '[path][local]__[name]__[hash:base64:5]'
-        }
+          modules: {
+            localIdentName: '[path][local]__[name]__[hash:base64:5]'
+          },
+        },
       }, {
-        loader: 'postcss-loader'
+        loader: 'postcss-loader',
       }],
       include: APP_PATH,
-    }]
+    }],
   },
 
   plugins: [
@@ -40,7 +41,7 @@ export default (env, argv) => merge(buildConfig(env, argv), {
     new StyleLintPlugin({
       configFile: '.stylelintrc',
       context: APP_PATH,
-      files: '**/*.css'
+      files: '**/*.css',
     }),
   ],
 

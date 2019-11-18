@@ -14,7 +14,7 @@ export const buildConfig = (env, argv) => ({
     rules: [
       { test: /\.jsx?$/, loader: 'eslint-loader', enforce: 'pre', include: APP_PATH },
       { test: /\.jsx?$/, loader: 'babel-loader', include: APP_PATH },
-    ]
+    ],
   },
 
   resolve: {

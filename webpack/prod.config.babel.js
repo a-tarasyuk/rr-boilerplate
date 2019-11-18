@@ -23,13 +23,14 @@ export default (env, argv) => merge(buildConfig(env, argv), {
       use: [MiniExtractTextPlugin.loader, {
         loader: 'css-loader',
         query: {
-          modules: true,
-          localIdentName: '[hash:base64:8]',
-        }
+          modules: {
+            localIdentName: '[hash:base64:8]',
+          },
+        },
       }, {
         loader: 'postcss-loader',
-      }]
-    }]
+      }],
+    }],
   },
 
   plugins: [

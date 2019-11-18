@@ -4,9 +4,12 @@ import { Link } from '../../components/link';
 import styles from './features.css';
 
 export const Features = ({ features }) => {
-  features = features.map((feature, index) => (
+  features = features.map(({ name, href }, index) => (
     <li className={ styles.feature } key={ index }>
-      <Link { ...feature } />
+      <Link
+        name={ name }
+        href={ href }
+      />
     </li>
   ));
 
